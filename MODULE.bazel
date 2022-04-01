@@ -1,1 +1,9 @@
 bazel_dep(name = "rules_pkg", version = "0.5.1")
+
+archive_override(
+    module_name = "rules_pkg",
+    urls = "https://github.com/bazelbuild/rules_pkg/releases/download/0.5.1/rules_pkg-0.5.1.tar.gz",
+    integrity = "sha256-qJ4gPTzyZOVk/LlrbgbdcLwFVzVutIQAzktdl8LDcg0=",
+    patch_strip = 1,
+    patches = ["//:rules_pkg.patch"],
+)
